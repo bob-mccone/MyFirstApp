@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <!--Tutorial told me to delete this but im not a fan of deleting-->
+    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--tools:context=".MyActivity">-->
+
+    <!--Tutorial told me to delete this but im not a fan of deleting-->
+    <!--<TextView android:text="@string/hello_world" android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--android:id is the unique id for the view,
+    @ is required when referring to any source object from xml,
+    + is only needed when defining a resource id for the first time,
+    id is the resource type, edit_message is the resource name
+    wrap_content specifies the view should be as big as the contents of the view,
+    Edit: if we change the width to 0dp then it will go across the entire screen
+    versus wrap_content will only do the content in that field :End of edit,
+    android:hint would display if the field is empty,
+    we don't need the + sign because refering to a concrete resource
+    @string/edit_message is refering to a string resource defined in a seperate file-->
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_message" />
+
+    <!--this creates the button, we dont need the android:id attribute because
+    it won't be referenced from the activity code, wrap_content will only
+    make the button as big as the content that it has on it, in this case it
+    is send, @string/button_send will reference the button_send name in the
+    strings.xml file and will display Send, android:onClick will call the
+    method sendMessage when the button is clicked-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:onClick="sendMessage" />
+
+</LinearLayout>
